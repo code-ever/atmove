@@ -1,0 +1,20 @@
+# /etc/systemd/system/atm-enugu.service
+# sudo useradd --system --home /opt/atm-enugu atm && sudo systemctl enable --now atm-enugu
+[Unit]
+Description=ATM Enugu Platform
+After=network.target
+
+[Service]
+User=atm
+WorkingDirectory=/opt/atm-enugu
+EnvironmentFile=/opt/atm-enugu/.env
+ExecStart=/usr/bin/node --disable-warning=ExperimentalWarning server.js
+Restart=always
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/atm-enugu /var/backups/atm-enugu
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

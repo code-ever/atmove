@@ -1,0 +1,17 @@
+{
+  "name": "atm-enugu-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ATM Enugu membership, structure and situation-room platform. Node 22.5+, no npm dependencies.",
+  "main": "server.js",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "demo": "DEMO_SEED=1 DATA_DIR=./data-demo node --disable-warning=ExperimentalWarning server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js",
+    "create-admin": "node --disable-warning=ExperimentalWarning scripts/create-admin.js",
+    "import-directory": "node --disable-warning=ExperimentalWarning scripts/import-directory.js",
+    "backup": "node --disable-warning=ExperimentalWarning scripts/backup.js",
+    "verify-audit": "node --disable-warning=ExperimentalWarning scripts/verify-audit.js"
+  }
+}
